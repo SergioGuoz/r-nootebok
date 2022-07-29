@@ -1,0 +1,186 @@
+---
+title: "R Notebook - Tarea 1"
+output: html_notebook
+---
+
+# **Funciones en R**
+
+## Estructura de una Función
+
+  Se organiza una función con un nombre seguido de la palabra reservada function,
+  después siguen los parametros, cuerpo y valor de retorno.
+  
+ - Nombre Función 
+ - Palabra reservada function
+ - Parametros de la Función
+ - Cuerpo de la función
+ - Valor de retorno (opcional)
+ 
+```{r}
+  nombreFuncion <- function(par1, par2, ... , parn){
+    # Codigo de la funcion
+    resultado <= 3*3;
+    
+    #Valor de retorno, opcional
+    return (resultado);
+  }
+```
+
+### Ejemplo de una Función
+  - Nombre de la funcion: multiplicar
+  - Parametros: val1 un número, val2 un número.
+  - Valor de Retorno: El resultado de la multiplicacion entre 2 números.
+```{r}
+  multiplicar <- function(val1, val2){
+    
+    return(val1*val2);
+  }
+
+  multiplicar(4,5); #Llamar a una función enviandole 2 valores.
+```
+### Argumentos de una Función
+
+Son los valores que se le pueden mandar a la función cumplir con el objetivo
+de dicha función.
+
+Se pueden definir valores por defecto asignandoles un valor al definir la función.
+```{r}
+            #Funcion que recibe 3 paramtros
+example <- function(alto,ancho, profundidad=1){ # El parametro de profundidad por 
+                                                # defecto tiene un valor de 1.
+}
+```
+
+### Argumentos por Valor
+Los argumentos por valor se envian al llamar a la función. R maneja los argumentos
+por valor en todos los casos, para actualizar una variable global se tiene
+la sintaxis de <<- al asignarle un valor dentro de una función.
+
+```{r}
+miFuncion('Hola Mundo!','Ingeniería','USAC');
+```
+
+
+# **Familia Apply**
+
+### **lapply**
+
+Aplica una función a cada elemento del objeto de entrada. Lo peculiar es que siempre
+retorna una lista.
+
+- Input: List, vector or data frame
+- Output: List
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+```{r}
+lapply(X, FUN)
+```
+
+#### Uso de lapply
+```{r}
+bono <- function(x){
+  return (x+250)
+}
+
+salario <- c(5000,4500,5500,7500,3200)
+salario_bono <-lapply(salario, bono)
+salario_bono
+
+#OUTPUT: [[1]]
+#         [1] 5250
+#       [[2]]
+#         [1] 4750
+
+final_salary <-  as.numeric(salario_bono) #para convertir de lista a vector
+#OUTPUT: [1] 5250 4750 5750 7750 3450
+
+final_salary[3]
+#OUTPUT: 5750
+```
+
+### **sapply**
+
+Aplica una función a cada elemento del objeto de entrada. Al aplicar esta función
+retorna un vector o matriz.
+
+- Input: List, vector or data frame
+- Output: Vector or matrix
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+```{r}
+sapply(X, FUN)
+```
+
+#### Uso de sapply
+
+Al vector de planilla le quita el iggs y retorna el nuevo valor del salario 
+con el descuento aplicado. Lo que retorna es un vector y no necesitamos hacer el 
+paso adicional de lappy para obtener un vector.
+
+```{r}
+
+quitarIggs <- function(x){
+  return (x - x*0.0483)
+}
+
+planilla <- c(5000,4500,5500,7500,3200)
+salario_sin_iggs <-sapply(planilla, quitarIggs)
+salario_sin_iggs
+#OUTPUT: [1] 4758.50 4282.65 5234.35 7137.75 3045.44
+
+salario_sin_iggs[1]
+#OUTPUT: 4758.5
+```
+
+### **vapply**
+
+Se caracteriza por retornar un vector con longitud que tiene cada una de las 
+listas pasadas como parametros a la función.
+
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+- FUN.VALUE tipo de dato a retornar.
+
+```{r}
+vapply(X, FUN, FUN.VALUE)
+```
+
+#### Uso de vapply
+
+Tomando un vector de ventas, cada día se tienen ventas por diferentes montos, 
+si quisieramos saber el monto de la venta máxima lo hacemos por medio de vapply,
+usando la funcion max nos busca el valor máximo en la lista que pasamos como parametro.
+
+```{r}
+
+ventas <- list(lunes = c(100, 45, 55), martes = c(500,80,200,36), miercoles = c(100,40))
+
+sapply(ventas, max)
+ventas_max <-vapply(ventas, max,numeric(1))
+
+ventas_max
+#OUTPUT: lunes    martes    miercoles 
+#         100       500       100 
+
+ventas_max[1]
+#OUTPUT: lunes
+#         100
+```
+
+Para saber la cantidad de ventas que se tuvieron en un día, se puede realizar 
+pasando el vector de ventas y haciendo uso de la función length para calcular el
+número de elementos de la lista, que en este caso equivalen al número de ventas.
+
+```{r}
+cantidad_ventas <-vapply(ventas, length,numeric(1))
+cantidad_ventas
+# OUTPUT: lunes    martes    miercoles 
+#           3         4         2 
+```
+
