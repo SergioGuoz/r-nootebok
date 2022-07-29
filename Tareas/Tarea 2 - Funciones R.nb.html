@@ -11,7 +11,7 @@
 
 
 
-<title>R Notebook - Tarea 1</title>
+<title>R Notebook - Tarea 2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1762,7 +1762,7 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">R Notebook - Tarea 1</h1>
+<h1 class="title toc-ignore">R Notebook - Tarea 2</h1>
 
 </div>
 
@@ -1783,100 +1783,166 @@ function, después siguen los parametros, cuerpo y valor de retorno.</p>
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBub21icmVGdW5jaW9uIDwtIGZ1bmN0aW9uKHBhcjEsIHBhcjIsIC4uLiAsIHBhcm4pe1xuICAgICMgQ29kaWdvIGRlIGxhIGZ1bmNpb25cbiAgICByZXN1bHRhZG8gPD0gMyozO1xuICAgIFxuICAgICNWYWxvciBkZSByZXRvcm5vLCBvcGNpb25hbFxuICAgIHJldHVybiAocmVzdWx0YWRvKTtcbiAgfVxuYGBgIn0= -->
-<pre class="r"><code>  nombreFuncion &lt;- function(par1, par2, ... , parn){
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuICBub21icmVGdW5jaW9uIDwtIGZ1bmN0aW9uKHBhcjEsIHBhcjIsIC4uLiAsIHBhcm4pe1xuICAgICMgQ29kaWdvIGRlIGxhIGZ1bmNpb25cbiAgICByZXN1bHRhZG8gPD0gMyozO1xuICAgIFxuICAgICNWYWxvciBkZSByZXRvcm5vLCBvcGNpb25hbFxuICAgIHJldHVybiAocmVzdWx0YWRvKTtcbiAgfVxuYGBgXG5gYGAifQ== -->
+<pre class="r"><code>```r
+  nombreFuncion &lt;- function(par1, par2, ... , parn){
     # Codigo de la funcion
     resultado &lt;= 3*3;
     
     #Valor de retorno, opcional
     return (resultado);
   }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<div id="ejemplo-de-una-función" class="section level3">
-<h3>Ejemplo de una Función</h3>
-<ul>
-<li>Nombre de la funcion: multiplicar</li>
-<li>Parametros: val1 un número, val2 un número.</li>
-<li>Valor de Retorno: El resultado de la multiplicacion entre 2
-números.</li>
-</ul>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbGljYXIgPC0gZnVuY3Rpb24odmFsMSwgdmFsMil7XG4gICAgXG4gICAgcmV0dXJuKHZhbDEqdmFsMik7XG4gIH1cblxuICBtdWx0aXBsaWNhcig0LDUpOyAjTGxhbWFyIGEgdW5hIGZ1bmNpw7NuIGVudmlhbmRvbGUgMiB2YWxvcmVzLlxuXG5gYGAifQ== -->
-<pre class="r"><code>multiplicar &lt;- function(val1, val2){
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+### Ejemplo de una Función
+  - Nombre de la funcion: multiplicar
+  - Parametros: val1 un número, val2 un número.
+  - Valor de Retorno: El resultado de la multiplicacion entre 2 números.
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubXVsdGlwbGljYXIgPC0gZnVuY3Rpb24odmFsMSwgdmFsMil7XG4gICAgXG4gICAgcmV0dXJuKHZhbDEqdmFsMik7XG4gIH1cblxuICBtdWx0aXBsaWNhcig0LDUpOyAjTGxhbWFyIGEgdW5hIGZ1bmNpw7NuIGVudmlhbmRvbGUgMiB2YWxvcmVzLlxuXG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+multiplicar &lt;- function(val1, val2){
     
     return(val1*val2);
   }
 
   multiplicar(4,5); #Llamar a una función enviandole 2 valores.
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwXG4ifQ== -->
-<pre><code>[1] 20</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="argumentos-de-una-función" class="section level3">
-<h3>Argumentos de una Función</h3>
-<p>Son los valores que se le pueden mandar a la función cumplir con el
-objetivo de dicha función.</p>
-<p>Se pueden definir valores por defecto asignandoles un valor al
-definir la función.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAgICAgICAgICAgI0Z1bmNpb24gcXVlIHJlY2liZSAzIHBhcmFtdHJvc1xuZXhhbXBsZSA8LSBmdW5jdGlvbihhbHRvLGFuY2hvLCBwcm9mdW5kaWRhZD0xKXsgIyBFbCBwYXJhbWV0cm8gZGUgcHJvZnVuZGlkYWQgcG9yIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBkZWZlY3RvIHRpZW5lIHVuIHZhbG9yIGRlIDEuXG59XG5gYGAifQ== -->
-<pre class="r"><code>            #Funcion que recibe 3 paramtros
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwXG4ifQ== --&gt;
+</code></pre>
+<p>[1] 20</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+### Argumentos de una Función
+
+Son los valores que se le pueden mandar a la función cumplir con el objetivo
+de dicha función.
+
+Se pueden definir valores por defecto asignandoles un valor al definir la función.
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuICAgICAgICAgICAgI0Z1bmNpb24gcXVlIHJlY2liZSAzIHBhcmFtdHJvc1xuZXhhbXBsZSA8LSBmdW5jdGlvbihhbHRvLGFuY2hvLCBwcm9mdW5kaWRhZD0xKXsgIyBFbCBwYXJhbWV0cm8gZGUgcHJvZnVuZGlkYWQgcG9yIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBkZWZlY3RvIHRpZW5lIHVuIHZhbG9yIGRlIDEuXG59XG5gYGBcbmBgYCJ9 --&gt;
+
+```r
+```r
+            #Funcion que recibe 3 paramtros
 example &lt;- function(alto,ancho, profundidad=1){ # El parametro de profundidad por 
                                                 # defecto tiene un valor de 1.
 }</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="argumentos-por-valor" class="section level3">
-<h3>Argumentos por Valor</h3>
-<p>Los argumentos por valor se envian al llamar a la función. R maneja
-los argumentos por valor en todos los casos, para actualizar una
-variable global se tiene la sintaxis de &lt;&lt;- al asignarle un valor
-dentro de una función.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWlGdW5jaW9uKCdIb2xhIE11bmRvIScsJ0luZ2VuaWVyw61hJywnVVNBQycpO1xuYGBgIn0= -->
-<pre class="r"><code>miFuncion(&#39;Hola Mundo!&#39;,&#39;Ingeniería&#39;,&#39;USAC&#39;);</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-</div>
-</div>
-<div id="familia-apply" class="section level1">
-<h1><strong>Familia Apply</strong></h1>
-<div id="lapply" class="section level3">
-<h3><strong>lapply</strong></h3>
-<p>Aplica una función a cada elemento del objeto de entrada. Lo peculiar
-es que siempre retorna una lista.</p>
-<ul>
-<li>Input: List, vector or data frame</li>
-<li>Output: List</li>
-</ul>
-<p>Syntax: - X es una lista, vector o data frame - FUN es la función que
-aplicara a cada elemento.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGFwcGx5KFgsIEZVTilcbmBgYCJ9 -->
-<pre class="r"><code>lapply(X, FUN)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<div id="uso-de-lapply" class="section level4">
-<h4>Uso de lapply</h4>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm9ubyA8LSBmdW5jdGlvbih4KXtcbiAgcmV0dXJuICh4KzI1MClcbn1cblxuc2FsYXJpbyA8LSBjKDUwMDAsNDUwMCw1NTAwLDc1MDAsMzIwMClcbnNhbGFyaW9fYm9ubyA8LWxhcHBseShzYWxhcmlvLCBib25vKVxuc2FsYXJpb19ib25vXG5cbmBgYCJ9 -->
-<pre class="r"><code>bono &lt;- function(x){
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+### Argumentos por Valor
+Los argumentos por valor se envian al llamar a la función. R maneja los argumentos
+por valor en todos los casos, para actualizar una variable global se tiene
+la sintaxis de &lt;&lt;- al asignarle un valor dentro de una función.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubWlGdW5jaW9uKCdIb2xhIE11bmRvIScsJ0luZ2VuaWVyw61hJywnVVNBQycpO1xuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+miFuncion(&#39;Hola Mundo!&#39;,&#39;Ingeniería&#39;,&#39;USAC&#39;);</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+
+# **Familia Apply**
+
+### **lapply**
+
+Aplica una función a cada elemento del objeto de entrada. Lo peculiar es que siempre
+retorna una lista.
+
+- Input: List, vector or data frame
+- Output: List
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGFwcGx5KFgsIEZVTilcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+lapply(X, FUN)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+#### Uso de lapply
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYm9ubyA8LSBmdW5jdGlvbih4KXtcbiAgcmV0dXJuICh4KzI1MClcbn1cblxuc2FsYXJpbyA8LSBjKDUwMDAsNDUwMCw1NTAwLDc1MDAsMzIwMClcbnNhbGFyaW9fYm9ubyA8LWxhcHBseShzYWxhcmlvLCBib25vKVxuc2FsYXJpb19ib25vXG5cbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+bono &lt;- function(x){
   return (x+250)
 }
 
@@ -1884,25 +1950,26 @@ salario &lt;- c(5000,4500,5500,7500,3200)
 salario_bono &lt;-lapply(salario, bono)
 salario_bono
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSA1MjUwXG5cbltbMl1dXG5bMV0gNDc1MFxuXG5bWzNdXVxuWzFdIDU3NTBcblxuW1s0XV1cblsxXSA3NzUwXG5cbltbNV1dXG5bMV0gMzQ1MFxuIn0= -->
-<pre><code>[[1]]
-[1] 5250
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
 
-[[2]]
-[1] 4750
+&lt;!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSA1MjUwXG5cbltbMl1dXG5bMV0gNDc1MFxuXG5bWzNdXVxuWzFdIDU3NTBcblxuW1s0XV1cblsxXSA3NzUwXG5cbltbNV1dXG5bMV0gMzQ1MFxuIn0= --&gt;
+</code></pre>
+<p>[[1]] [1] 5250</p>
+<p>[[2]] [1] 4750</p>
+<p>[[3]] [1] 5750</p>
+<p>[[4]] [1] 7750</p>
+<p>[[5]] [1] 3450</p>
+<pre><code>
 
-[[3]]
-[1] 5750
 
-[[4]]
-[1] 7750
+&lt;!-- rnb-output-end --&gt;
 
-[[5]]
-[1] 3450</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI09VVFBVVDogW1sxXV1cbiMgICAgICAgICBbMV0gNTI1MFxuIyAgICAgICBbWzJdXVxuIyAgICAgICAgIFsxXSA0NzUwXG5cbmZpbmFsX3NhbGFyeSA8LSAgYXMubnVtZXJpYyhzYWxhcmlvX2Jvbm8pICNwYXJhIGNvbnZlcnRpciBkZSBsaXN0YSBhIHZlY3RvclxuI09VVFBVVDogWzFdIDUyNTAgNDc1MCA1NzUwIDc3NTAgMzQ1MFxuXG5maW5hbF9zYWxhcnlbM11cbmBgYCJ9 -->
-<pre class="r"><code>#OUTPUT: [[1]]
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI09VVFBVVDogW1sxXV1cbiMgICAgICAgICBbMV0gNTI1MFxuIyAgICAgICBbWzJdXVxuIyAgICAgICAgIFsxXSA0NzUwXG5cbmZpbmFsX3NhbGFyeSA8LSAgYXMubnVtZXJpYyhzYWxhcmlvX2Jvbm8pICNwYXJhIGNvbnZlcnRpciBkZSBsaXN0YSBhIHZlY3RvclxuI09VVFBVVDogWzFdIDUyNTAgNDc1MCA1NzUwIDc3NTAgMzQ1MFxuXG5maW5hbF9zYWxhcnlbM11cbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+#OUTPUT: [[1]]
 #         [1] 5250
 #       [[2]]
 #         [1] 4750
@@ -1911,43 +1978,81 @@ final_salary &lt;-  as.numeric(salario_bono) #para convertir de lista a vector
 #OUTPUT: [1] 5250 4750 5750 7750 3450
 
 final_salary[3]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU3NTBcbiJ9 -->
-<pre><code>[1] 5750</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI09VVFBVVDogNTc1MFxuYGBgIn0= -->
-<pre class="r"><code>#OUTPUT: 5750</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-</div>
-<div id="sapply" class="section level3">
-<h3><strong>sapply</strong></h3>
-<p>Aplica una función a cada elemento del objeto de entrada. Al aplicar
-esta función retorna un vector o matriz.</p>
-<ul>
-<li>Input: List, vector or data frame</li>
-<li>Output: Vector or matrix</li>
-</ul>
-<p>Syntax: - X es una lista, vector o data frame - FUN es la función que
-aplicara a cada elemento.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2FwcGx5KFgsIEZVTilcbmBgYCJ9 -->
-<pre class="r"><code>sapply(X, FUN)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<div id="uso-de-sapply" class="section level4">
-<h4>Uso de sapply</h4>
-<p>Al vector de planilla le quita el iggs y retorna el nuevo valor del
-salario con el descuento aplicado. Lo que retorna es un vector y no
-necesitamos hacer el paso adicional de lappy para obtener un vector.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5xdWl0YXJJZ2dzIDwtIGZ1bmN0aW9uKHgpe1xuICByZXR1cm4gKHggLSB4KjAuMDQ4Mylcbn1cblxucGxhbmlsbGEgPC0gYyg1MDAwLDQ1MDAsNTUwMCw3NTAwLDMyMDApXG5zYWxhcmlvX3Npbl9pZ2dzIDwtc2FwcGx5KHBsYW5pbGxhLCBxdWl0YXJJZ2dzKVxuc2FsYXJpb19zaW5faWdnc1xuI09VVFBVVDogWzFdIDQ3NTguNTAgNDI4Mi42NSA1MjM0LjM1IDcxMzcuNzUgMzA0NS40NFxuXG5zYWxhcmlvX3Npbl9pZ2dzWzFdXG4jT1VUUFVUOiA0NzU4LjVcbmBgYCJ9 -->
-<pre class="r"><code>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU3NTBcbiJ9 --&gt;
+</code></pre>
+<p>[1] 5750</p>
+<pre><code>
+
+
+&lt;!-- rnb-output-end --&gt;
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI09VVFBVVDogNTc1MFxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+#OUTPUT: 5750</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+### **sapply**
+
+Aplica una función a cada elemento del objeto de entrada. Al aplicar esta función
+retorna un vector o matriz.
+
+- Input: List, vector or data frame
+- Output: Vector or matrix
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2FwcGx5KFgsIEZVTilcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+sapply(X, FUN)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+#### Uso de sapply
+
+Al vector de planilla le quita el iggs y retorna el nuevo valor del salario 
+con el descuento aplicado. Lo que retorna es un vector y no necesitamos hacer el 
+paso adicional de lappy para obtener un vector.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG5xdWl0YXJJZ2dzIDwtIGZ1bmN0aW9uKHgpe1xuICByZXR1cm4gKHggLSB4KjAuMDQ4Mylcbn1cblxucGxhbmlsbGEgPC0gYyg1MDAwLDQ1MDAsNTUwMCw3NTAwLDMyMDApXG5zYWxhcmlvX3Npbl9pZ2dzIDwtc2FwcGx5KHBsYW5pbGxhLCBxdWl0YXJJZ2dzKVxuc2FsYXJpb19zaW5faWdnc1xuI09VVFBVVDogWzFdIDQ3NTguNTAgNDI4Mi42NSA1MjM0LjM1IDcxMzcuNzUgMzA0NS40NFxuXG5zYWxhcmlvX3Npbl9pZ2dzWzFdXG4jT1VUUFVUOiA0NzU4LjVcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+
 quitarIggs &lt;- function(x){
   return (x - x*0.0483)
 }
@@ -1959,34 +2064,65 @@ salario_sin_iggs
 
 salario_sin_iggs[1]
 #OUTPUT: 4758.5</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-</div>
-<div id="vapply" class="section level3">
-<h3><strong>vapply</strong></h3>
-<p>Se caracteriza por retornar un vector con longitud que tiene cada una
-de las listas pasadas como parametros a la función.</p>
-<p>Syntax: - X es una lista, vector o data frame - FUN es la función que
-aplicara a cada elemento. - FUN.VALUE tipo de dato a retornar.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmFwcGx5KFgsIEZVTiwgRlVOLlZBTFVFKVxuYGBgIn0= -->
-<pre class="r"><code>vapply(X, FUN, FUN.VALUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<div id="uso-de-vapply" class="section level4">
-<h4>Uso de vapply</h4>
-<p>Tomando un vector de ventas, cada día se tienen ventas por diferentes
-montos, si quisieramos saber el monto de la venta máxima lo hacemos por
-medio de vapply, usando la funcion max nos busca el valor máximo en la
-lista que pasamos como parametro.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG52ZW50YXMgPC0gbGlzdChsdW5lcyA9IGMoMTAwLCA0NSwgNTUpLCBtYXJ0ZXMgPSBjKDUwMCw4MCwyMDAsMzYpLCBtaWVyY29sZXMgPSBjKDEwMCw0MCkpXG5cbnNhcHBseSh2ZW50YXMsIG1heClcbnZlbnRhc19tYXggPC12YXBwbHkodmVudGFzLCBtYXgsbnVtZXJpYygxKSlcblxudmVudGFzX21heFxuI09VVFBVVDogbHVuZXMgICAgbWFydGVzICAgIG1pZXJjb2xlcyBcbiMgICAgICAgICAxMDAgICAgICAgNTAwICAgICAgIDEwMCBcblxudmVudGFzX21heFsxXVxuI09VVFBVVDogbHVuZXNcbiMgICAgICAgICAxMDBcbmBgYCJ9 -->
-<pre class="r"><code>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+### **vapply**
+
+Se caracteriza por retornar un vector con longitud que tiene cada una de las 
+listas pasadas como parametros a la función.
+
+
+Syntax:
+- X es una lista, vector o data frame
+- FUN es la función que aplicara a cada elemento.
+- FUN.VALUE tipo de dato a retornar.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxudmFwcGx5KFgsIEZVTiwgRlVOLlZBTFVFKVxuYGBgXG5gYGAifQ== --&gt;
+
+```r
+```r
+vapply(X, FUN, FUN.VALUE)</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+#### Uso de vapply
+
+Tomando un vector de ventas, cada día se tienen ventas por diferentes montos, 
+si quisieramos saber el monto de la venta máxima lo hacemos por medio de vapply,
+usando la funcion max nos busca el valor máximo en la lista que pasamos como parametro.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG52ZW50YXMgPC0gbGlzdChsdW5lcyA9IGMoMTAwLCA0NSwgNTUpLCBtYXJ0ZXMgPSBjKDUwMCw4MCwyMDAsMzYpLCBtaWVyY29sZXMgPSBjKDEwMCw0MCkpXG5cbnNhcHBseSh2ZW50YXMsIG1heClcbnZlbnRhc19tYXggPC12YXBwbHkodmVudGFzLCBtYXgsbnVtZXJpYygxKSlcblxudmVudGFzX21heFxuI09VVFBVVDogbHVuZXMgICAgbWFydGVzICAgIG1pZXJjb2xlcyBcbiMgICAgICAgICAxMDAgICAgICAgNTAwICAgICAgIDEwMCBcblxudmVudGFzX21heFsxXVxuI09VVFBVVDogbHVuZXNcbiMgICAgICAgICAxMDBcbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+
 ventas &lt;- list(lunes = c(100, 45, 55), martes = c(500,80,200,36), miercoles = c(100,40))
 
 sapply(ventas, max)
@@ -1999,31 +2135,46 @@ ventas_max
 ventas_max[1]
 #OUTPUT: lunes
 #         100</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Para saber la cantidad de ventas que se tuvieron en un día, se puede
-realizar pasando el vector de ventas y haciendo uso de la función length
-para calcular el número de elementos de la lista, que en este caso
-equivalen al número de ventas.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FudGlkYWRfdmVudGFzXG5cbmBgYCJ9 -->
-<pre class="r"><code>cantidad_ventas
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-chunk-end --&gt;
+
+
+&lt;!-- rnb-text-begin --&gt;
+
+
+Para saber la cantidad de ventas que se tuvieron en un día, se puede realizar 
+pasando el vector de ventas y haciendo uso de la función length para calcular el
+número de elementos de la lista, que en este caso equivalen al número de ventas.
+
+
+&lt;!-- rnb-text-end --&gt;
+
+
+&lt;!-- rnb-chunk-begin --&gt;
+
+
+&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuY2FudGlkYWRfdmVudGFzXG5cbmBgYFxuYGBgIn0= --&gt;
+
+```r
+```r
+cantidad_ventas
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgIGx1bmVzICAgIG1hcnRlcyBtaWVyY29sZXMgXG4gICAgICAgIDMgICAgICAgICA0ICAgICAgICAgMiBcbiJ9 -->
-<pre><code>    lunes    martes miercoles 
-        3         4         2 </code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiICAgIGx1bmVzICAgIG1hcnRlcyBtaWVyY29sZXMgXG4gICAgICAgIDMgICAgICAgICA0ICAgICAgICAgMiBcbiJ9 --&gt;
+</code></pre>
+<pre><code>lunes    martes miercoles 
+    3         4         2 </code></pre>
+<p>```</p>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-</div>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2sgLSBUYXJlYSAxIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyAqKkZ1bmNpb25lcyBlbiBSKioNCg0KIyMgRXN0cnVjdHVyYSBkZSB1bmEgRnVuY2nDs24NCg0KICBTZSBvcmdhbml6YSB1bmEgZnVuY2nDs24gY29uIHVuIG5vbWJyZSBzZWd1aWRvIGRlIGxhIHBhbGFicmEgcmVzZXJ2YWRhIGZ1bmN0aW9uLA0KICBkZXNwdcOpcyBzaWd1ZW4gbG9zIHBhcmFtZXRyb3MsIGN1ZXJwbyB5IHZhbG9yIGRlIHJldG9ybm8uDQogIA0KIC0gTm9tYnJlIEZ1bmNpw7NuIA0KIC0gUGFsYWJyYSByZXNlcnZhZGEgZnVuY3Rpb24NCiAtIFBhcmFtZXRyb3MgZGUgbGEgRnVuY2nDs24NCiAtIEN1ZXJwbyBkZSBsYSBmdW5jacOzbg0KIC0gVmFsb3IgZGUgcmV0b3JubyAob3BjaW9uYWwpDQogDQpgYGB7cn0NCiAgbm9tYnJlRnVuY2lvbiA8LSBmdW5jdGlvbihwYXIxLCBwYXIyLCAuLi4gLCBwYXJuKXsNCiAgICAjIENvZGlnbyBkZSBsYSBmdW5jaW9uDQogICAgcmVzdWx0YWRvIDw9IDMqMzsNCiAgICANCiAgICAjVmFsb3IgZGUgcmV0b3Jubywgb3BjaW9uYWwNCiAgICByZXR1cm4gKHJlc3VsdGFkbyk7DQogIH0NCmBgYA0KDQojIyMgRWplbXBsbyBkZSB1bmEgRnVuY2nDs24NCiAgLSBOb21icmUgZGUgbGEgZnVuY2lvbjogbXVsdGlwbGljYXINCiAgLSBQYXJhbWV0cm9zOiB2YWwxIHVuIG7Dum1lcm8sIHZhbDIgdW4gbsO6bWVyby4NCiAgLSBWYWxvciBkZSBSZXRvcm5vOiBFbCByZXN1bHRhZG8gZGUgbGEgbXVsdGlwbGljYWNpb24gZW50cmUgMiBuw7ptZXJvcy4NCmBgYHtyfQ0KICBtdWx0aXBsaWNhciA8LSBmdW5jdGlvbih2YWwxLCB2YWwyKXsNCiAgICANCiAgICByZXR1cm4odmFsMSp2YWwyKTsNCiAgfQ0KDQogIG11bHRpcGxpY2FyKDQsNSk7ICNMbGFtYXIgYSB1bmEgZnVuY2nDs24gZW52aWFuZG9sZSAyIHZhbG9yZXMuDQpgYGANCiMjIyBBcmd1bWVudG9zIGRlIHVuYSBGdW5jacOzbg0KDQpTb24gbG9zIHZhbG9yZXMgcXVlIHNlIGxlIHB1ZWRlbiBtYW5kYXIgYSBsYSBmdW5jacOzbiBjdW1wbGlyIGNvbiBlbCBvYmpldGl2bw0KZGUgZGljaGEgZnVuY2nDs24uDQoNClNlIHB1ZWRlbiBkZWZpbmlyIHZhbG9yZXMgcG9yIGRlZmVjdG8gYXNpZ25hbmRvbGVzIHVuIHZhbG9yIGFsIGRlZmluaXIgbGEgZnVuY2nDs24uDQpgYGB7cn0NCiAgICAgICAgICAgICNGdW5jaW9uIHF1ZSByZWNpYmUgMyBwYXJhbXRyb3MNCmV4YW1wbGUgPC0gZnVuY3Rpb24oYWx0byxhbmNobywgcHJvZnVuZGlkYWQ9MSl7ICMgRWwgcGFyYW1ldHJvIGRlIHByb2Z1bmRpZGFkIHBvciANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgZGVmZWN0byB0aWVuZSB1biB2YWxvciBkZSAxLg0KfQ0KYGBgDQoNCiMjIyBBcmd1bWVudG9zIHBvciBWYWxvcg0KTG9zIGFyZ3VtZW50b3MgcG9yIHZhbG9yIHNlIGVudmlhbiBhbCBsbGFtYXIgYSBsYSBmdW5jacOzbi4gUiBtYW5lamEgbG9zIGFyZ3VtZW50b3MNCnBvciB2YWxvciBlbiB0b2RvcyBsb3MgY2Fzb3MsIHBhcmEgYWN0dWFsaXphciB1bmEgdmFyaWFibGUgZ2xvYmFsIHNlIHRpZW5lDQpsYSBzaW50YXhpcyBkZSA8PC0gYWwgYXNpZ25hcmxlIHVuIHZhbG9yIGRlbnRybyBkZSB1bmEgZnVuY2nDs24uDQoNCmBgYHtyfQ0KbWlGdW5jaW9uKCdIb2xhIE11bmRvIScsJ0luZ2VuaWVyw61hJywnVVNBQycpOw0KYGBgDQoNCg0KIyAqKkZhbWlsaWEgQXBwbHkqKg0KDQojIyMgKipsYXBwbHkqKg0KDQpBcGxpY2EgdW5hIGZ1bmNpw7NuIGEgY2FkYSBlbGVtZW50byBkZWwgb2JqZXRvIGRlIGVudHJhZGEuIExvIHBlY3VsaWFyIGVzIHF1ZSBzaWVtcHJlDQpyZXRvcm5hIHVuYSBsaXN0YS4NCg0KLSBJbnB1dDogTGlzdCwgdmVjdG9yIG9yIGRhdGEgZnJhbWUNCi0gT3V0cHV0OiBMaXN0DQoNClN5bnRheDoNCi0gWCBlcyB1bmEgbGlzdGEsIHZlY3RvciBvIGRhdGEgZnJhbWUNCi0gRlVOIGVzIGxhIGZ1bmNpw7NuIHF1ZSBhcGxpY2FyYSBhIGNhZGEgZWxlbWVudG8uDQpgYGB7cn0NCmxhcHBseShYLCBGVU4pDQpgYGANCg0KIyMjIyBVc28gZGUgbGFwcGx5DQpgYGB7cn0NCmJvbm8gPC0gZnVuY3Rpb24oeCl7DQogIHJldHVybiAoeCsyNTApDQp9DQoNCnNhbGFyaW8gPC0gYyg1MDAwLDQ1MDAsNTUwMCw3NTAwLDMyMDApDQpzYWxhcmlvX2Jvbm8gPC1sYXBwbHkoc2FsYXJpbywgYm9ubykNCnNhbGFyaW9fYm9ubw0KDQojT1VUUFVUOiBbWzFdXQ0KIyAgICAgICAgIFsxXSA1MjUwDQojICAgICAgIFtbMl1dDQojICAgICAgICAgWzFdIDQ3NTANCg0KZmluYWxfc2FsYXJ5IDwtICBhcy5udW1lcmljKHNhbGFyaW9fYm9ubykgI3BhcmEgY29udmVydGlyIGRlIGxpc3RhIGEgdmVjdG9yDQojT1VUUFVUOiBbMV0gNTI1MCA0NzUwIDU3NTAgNzc1MCAzNDUwDQoNCmZpbmFsX3NhbGFyeVszXQ0KI09VVFBVVDogNTc1MA0KYGBgDQoNCiMjIyAqKnNhcHBseSoqDQoNCkFwbGljYSB1bmEgZnVuY2nDs24gYSBjYWRhIGVsZW1lbnRvIGRlbCBvYmpldG8gZGUgZW50cmFkYS4gQWwgYXBsaWNhciBlc3RhIGZ1bmNpw7NuDQpyZXRvcm5hIHVuIHZlY3RvciBvIG1hdHJpei4NCg0KLSBJbnB1dDogTGlzdCwgdmVjdG9yIG9yIGRhdGEgZnJhbWUNCi0gT3V0cHV0OiBWZWN0b3Igb3IgbWF0cml4DQoNClN5bnRheDoNCi0gWCBlcyB1bmEgbGlzdGEsIHZlY3RvciBvIGRhdGEgZnJhbWUNCi0gRlVOIGVzIGxhIGZ1bmNpw7NuIHF1ZSBhcGxpY2FyYSBhIGNhZGEgZWxlbWVudG8uDQpgYGB7cn0NCnNhcHBseShYLCBGVU4pDQpgYGANCg0KIyMjIyBVc28gZGUgc2FwcGx5DQoNCkFsIHZlY3RvciBkZSBwbGFuaWxsYSBsZSBxdWl0YSBlbCBpZ2dzIHkgcmV0b3JuYSBlbCBudWV2byB2YWxvciBkZWwgc2FsYXJpbyANCmNvbiBlbCBkZXNjdWVudG8gYXBsaWNhZG8uIExvIHF1ZSByZXRvcm5hIGVzIHVuIHZlY3RvciB5IG5vIG5lY2VzaXRhbW9zIGhhY2VyIGVsIA0KcGFzbyBhZGljaW9uYWwgZGUgbGFwcHkgcGFyYSBvYnRlbmVyIHVuIHZlY3Rvci4NCg0KYGBge3J9DQoNCnF1aXRhcklnZ3MgPC0gZnVuY3Rpb24oeCl7DQogIHJldHVybiAoeCAtIHgqMC4wNDgzKQ0KfQ0KDQpwbGFuaWxsYSA8LSBjKDUwMDAsNDUwMCw1NTAwLDc1MDAsMzIwMCkNCnNhbGFyaW9fc2luX2lnZ3MgPC1zYXBwbHkocGxhbmlsbGEsIHF1aXRhcklnZ3MpDQpzYWxhcmlvX3Npbl9pZ2dzDQojT1VUUFVUOiBbMV0gNDc1OC41MCA0MjgyLjY1IDUyMzQuMzUgNzEzNy43NSAzMDQ1LjQ0DQoNCnNhbGFyaW9fc2luX2lnZ3NbMV0NCiNPVVRQVVQ6IDQ3NTguNQ0KYGBgDQoNCiMjIyAqKnZhcHBseSoqDQoNClNlIGNhcmFjdGVyaXphIHBvciByZXRvcm5hciB1biB2ZWN0b3IgY29uIGxvbmdpdHVkIHF1ZSB0aWVuZSBjYWRhIHVuYSBkZSBsYXMgDQpsaXN0YXMgcGFzYWRhcyBjb21vIHBhcmFtZXRyb3MgYSBsYSBmdW5jacOzbi4NCg0KDQpTeW50YXg6DQotIFggZXMgdW5hIGxpc3RhLCB2ZWN0b3IgbyBkYXRhIGZyYW1lDQotIEZVTiBlcyBsYSBmdW5jacOzbiBxdWUgYXBsaWNhcmEgYSBjYWRhIGVsZW1lbnRvLg0KLSBGVU4uVkFMVUUgdGlwbyBkZSBkYXRvIGEgcmV0b3JuYXIuDQoNCmBgYHtyfQ0KdmFwcGx5KFgsIEZVTiwgRlVOLlZBTFVFKQ0KYGBgDQoNCiMjIyMgVXNvIGRlIHZhcHBseQ0KDQpUb21hbmRvIHVuIHZlY3RvciBkZSB2ZW50YXMsIGNhZGEgZMOtYSBzZSB0aWVuZW4gdmVudGFzIHBvciBkaWZlcmVudGVzIG1vbnRvcywgDQpzaSBxdWlzaWVyYW1vcyBzYWJlciBlbCBtb250byBkZSBsYSB2ZW50YSBtw6F4aW1hIGxvIGhhY2Vtb3MgcG9yIG1lZGlvIGRlIHZhcHBseSwNCnVzYW5kbyBsYSBmdW5jaW9uIG1heCBub3MgYnVzY2EgZWwgdmFsb3IgbcOheGltbyBlbiBsYSBsaXN0YSBxdWUgcGFzYW1vcyBjb21vIHBhcmFtZXRyby4NCg0KYGBge3J9DQoNCnZlbnRhcyA8LSBsaXN0KGx1bmVzID0gYygxMDAsIDQ1LCA1NSksIG1hcnRlcyA9IGMoNTAwLDgwLDIwMCwzNiksIG1pZXJjb2xlcyA9IGMoMTAwLDQwKSkNCg0Kc2FwcGx5KHZlbnRhcywgbWF4KQ0KdmVudGFzX21heCA8LXZhcHBseSh2ZW50YXMsIG1heCxudW1lcmljKDEpKQ0KDQp2ZW50YXNfbWF4DQojT1VUUFVUOiBsdW5lcyAgICBtYXJ0ZXMgICAgbWllcmNvbGVzIA0KIyAgICAgICAgIDEwMCAgICAgICA1MDAgICAgICAgMTAwIA0KDQp2ZW50YXNfbWF4WzFdDQojT1VUUFVUOiBsdW5lcw0KIyAgICAgICAgIDEwMA0KYGBgDQoNClBhcmEgc2FiZXIgbGEgY2FudGlkYWQgZGUgdmVudGFzIHF1ZSBzZSB0dXZpZXJvbiBlbiB1biBkw61hLCBzZSBwdWVkZSByZWFsaXphciANCnBhc2FuZG8gZWwgdmVjdG9yIGRlIHZlbnRhcyB5IGhhY2llbmRvIHVzbyBkZSBsYSBmdW5jacOzbiBsZW5ndGggcGFyYSBjYWxjdWxhciBlbA0KbsO6bWVybyBkZSBlbGVtZW50b3MgZGUgbGEgbGlzdGEsIHF1ZSBlbiBlc3RlIGNhc28gZXF1aXZhbGVuIGFsIG7Dum1lcm8gZGUgdmVudGFzLg0KDQpgYGB7cn0NCmNhbnRpZGFkX3ZlbnRhcyA8LXZhcHBseSh2ZW50YXMsIGxlbmd0aCxudW1lcmljKDEpKQ0KY2FudGlkYWRfdmVudGFzDQojIE9VVFBVVDogbHVuZXMgICAgbWFydGVzICAgIG1pZXJjb2xlcyANCiMgICAgICAgICAgIDMgICAgICAgICA0ICAgICAgICAgMiANCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2sgLSBUYXJlYSAyIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyAqKkZ1bmNpb25lcyBlbiBSKioNCg0KIyMgRXN0cnVjdHVyYSBkZSB1bmEgRnVuY2nDs24NCg0KICBTZSBvcmdhbml6YSB1bmEgZnVuY2nDs24gY29uIHVuIG5vbWJyZSBzZWd1aWRvIGRlIGxhIHBhbGFicmEgcmVzZXJ2YWRhIGZ1bmN0aW9uLA0KICBkZXNwdcOpcyBzaWd1ZW4gbG9zIHBhcmFtZXRyb3MsIGN1ZXJwbyB5IHZhbG9yIGRlIHJldG9ybm8uDQogIA0KIC0gTm9tYnJlIEZ1bmNpw7NuIA0KIC0gUGFsYWJyYSByZXNlcnZhZGEgZnVuY3Rpb24NCiAtIFBhcmFtZXRyb3MgZGUgbGEgRnVuY2nDs24NCiAtIEN1ZXJwbyBkZSBsYSBmdW5jacOzbg0KIC0gVmFsb3IgZGUgcmV0b3JubyAob3BjaW9uYWwpDQogDQpgYGB7cn0NCiAgbm9tYnJlRnVuY2lvbiA8LSBmdW5jdGlvbihwYXIxLCBwYXIyLCAuLi4gLCBwYXJuKXsNCiAgICAjIENvZGlnbyBkZSBsYSBmdW5jaW9uDQogICAgcmVzdWx0YWRvIDw9IDMqMzsNCiAgICANCiAgICAjVmFsb3IgZGUgcmV0b3Jubywgb3BjaW9uYWwNCiAgICByZXR1cm4gKHJlc3VsdGFkbyk7DQogIH0NCmBgYA0KDQojIyMgRWplbXBsbyBkZSB1bmEgRnVuY2nDs24NCiAgLSBOb21icmUgZGUgbGEgZnVuY2lvbjogbXVsdGlwbGljYXINCiAgLSBQYXJhbWV0cm9zOiB2YWwxIHVuIG7Dum1lcm8sIHZhbDIgdW4gbsO6bWVyby4NCiAgLSBWYWxvciBkZSBSZXRvcm5vOiBFbCByZXN1bHRhZG8gZGUgbGEgbXVsdGlwbGljYWNpb24gZW50cmUgMiBuw7ptZXJvcy4NCmBgYHtyfQ0KICBtdWx0aXBsaWNhciA8LSBmdW5jdGlvbih2YWwxLCB2YWwyKXsNCiAgICANCiAgICByZXR1cm4odmFsMSp2YWwyKTsNCiAgfQ0KDQogIG11bHRpcGxpY2FyKDQsNSk7ICNMbGFtYXIgYSB1bmEgZnVuY2nDs24gZW52aWFuZG9sZSAyIHZhbG9yZXMuDQpgYGANCiMjIyBBcmd1bWVudG9zIGRlIHVuYSBGdW5jacOzbg0KDQpTb24gbG9zIHZhbG9yZXMgcXVlIHNlIGxlIHB1ZWRlbiBtYW5kYXIgYSBsYSBmdW5jacOzbiBjdW1wbGlyIGNvbiBlbCBvYmpldGl2bw0KZGUgZGljaGEgZnVuY2nDs24uDQoNClNlIHB1ZWRlbiBkZWZpbmlyIHZhbG9yZXMgcG9yIGRlZmVjdG8gYXNpZ25hbmRvbGVzIHVuIHZhbG9yIGFsIGRlZmluaXIgbGEgZnVuY2nDs24uDQpgYGB7cn0NCiAgICAgICAgICAgICNGdW5jaW9uIHF1ZSByZWNpYmUgMyBwYXJhbXRyb3MNCmV4YW1wbGUgPC0gZnVuY3Rpb24oYWx0byxhbmNobywgcHJvZnVuZGlkYWQ9MSl7ICMgRWwgcGFyYW1ldHJvIGRlIHByb2Z1bmRpZGFkIHBvciANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgZGVmZWN0byB0aWVuZSB1biB2YWxvciBkZSAxLg0KfQ0KYGBgDQoNCiMjIyBBcmd1bWVudG9zIHBvciBWYWxvcg0KTG9zIGFyZ3VtZW50b3MgcG9yIHZhbG9yIHNlIGVudmlhbiBhbCBsbGFtYXIgYSBsYSBmdW5jacOzbi4gUiBtYW5lamEgbG9zIGFyZ3VtZW50b3MNCnBvciB2YWxvciBlbiB0b2RvcyBsb3MgY2Fzb3MsIHBhcmEgYWN0dWFsaXphciB1bmEgdmFyaWFibGUgZ2xvYmFsIHNlIHRpZW5lDQpsYSBzaW50YXhpcyBkZSA8PC0gYWwgYXNpZ25hcmxlIHVuIHZhbG9yIGRlbnRybyBkZSB1bmEgZnVuY2nDs24uDQoNCmBgYHtyfQ0KbWlGdW5jaW9uKCdIb2xhIE11bmRvIScsJ0luZ2VuaWVyw61hJywnVVNBQycpOw0KYGBgDQoNCg0KIyAqKkZhbWlsaWEgQXBwbHkqKg0KDQojIyMgKipsYXBwbHkqKg0KDQpBcGxpY2EgdW5hIGZ1bmNpw7NuIGEgY2FkYSBlbGVtZW50byBkZWwgb2JqZXRvIGRlIGVudHJhZGEuIExvIHBlY3VsaWFyIGVzIHF1ZSBzaWVtcHJlDQpyZXRvcm5hIHVuYSBsaXN0YS4NCg0KLSBJbnB1dDogTGlzdCwgdmVjdG9yIG9yIGRhdGEgZnJhbWUNCi0gT3V0cHV0OiBMaXN0DQoNClN5bnRheDoNCi0gWCBlcyB1bmEgbGlzdGEsIHZlY3RvciBvIGRhdGEgZnJhbWUNCi0gRlVOIGVzIGxhIGZ1bmNpw7NuIHF1ZSBhcGxpY2FyYSBhIGNhZGEgZWxlbWVudG8uDQpgYGB7cn0NCmxhcHBseShYLCBGVU4pDQpgYGANCg0KIyMjIyBVc28gZGUgbGFwcGx5DQpgYGB7cn0NCmJvbm8gPC0gZnVuY3Rpb24oeCl7DQogIHJldHVybiAoeCsyNTApDQp9DQoNCnNhbGFyaW8gPC0gYyg1MDAwLDQ1MDAsNTUwMCw3NTAwLDMyMDApDQpzYWxhcmlvX2Jvbm8gPC1sYXBwbHkoc2FsYXJpbywgYm9ubykNCnNhbGFyaW9fYm9ubw0KDQojT1VUUFVUOiBbWzFdXQ0KIyAgICAgICAgIFsxXSA1MjUwDQojICAgICAgIFtbMl1dDQojICAgICAgICAgWzFdIDQ3NTANCg0KZmluYWxfc2FsYXJ5IDwtICBhcy5udW1lcmljKHNhbGFyaW9fYm9ubykgI3BhcmEgY29udmVydGlyIGRlIGxpc3RhIGEgdmVjdG9yDQojT1VUUFVUOiBbMV0gNTI1MCA0NzUwIDU3NTAgNzc1MCAzNDUwDQoNCmZpbmFsX3NhbGFyeVszXQ0KI09VVFBVVDogNTc1MA0KYGBgDQoNCiMjIyAqKnNhcHBseSoqDQoNCkFwbGljYSB1bmEgZnVuY2nDs24gYSBjYWRhIGVsZW1lbnRvIGRlbCBvYmpldG8gZGUgZW50cmFkYS4gQWwgYXBsaWNhciBlc3RhIGZ1bmNpw7NuDQpyZXRvcm5hIHVuIHZlY3RvciBvIG1hdHJpei4NCg0KLSBJbnB1dDogTGlzdCwgdmVjdG9yIG9yIGRhdGEgZnJhbWUNCi0gT3V0cHV0OiBWZWN0b3Igb3IgbWF0cml4DQoNClN5bnRheDoNCi0gWCBlcyB1bmEgbGlzdGEsIHZlY3RvciBvIGRhdGEgZnJhbWUNCi0gRlVOIGVzIGxhIGZ1bmNpw7NuIHF1ZSBhcGxpY2FyYSBhIGNhZGEgZWxlbWVudG8uDQpgYGB7cn0NCnNhcHBseShYLCBGVU4pDQpgYGANCg0KIyMjIyBVc28gZGUgc2FwcGx5DQoNCkFsIHZlY3RvciBkZSBwbGFuaWxsYSBsZSBxdWl0YSBlbCBpZ2dzIHkgcmV0b3JuYSBlbCBudWV2byB2YWxvciBkZWwgc2FsYXJpbyANCmNvbiBlbCBkZXNjdWVudG8gYXBsaWNhZG8uIExvIHF1ZSByZXRvcm5hIGVzIHVuIHZlY3RvciB5IG5vIG5lY2VzaXRhbW9zIGhhY2VyIGVsIA0KcGFzbyBhZGljaW9uYWwgZGUgbGFwcHkgcGFyYSBvYnRlbmVyIHVuIHZlY3Rvci4NCg0KYGBge3J9DQoNCnF1aXRhcklnZ3MgPC0gZnVuY3Rpb24oeCl7DQogIHJldHVybiAoeCAtIHgqMC4wNDgzKQ0KfQ0KDQpwbGFuaWxsYSA8LSBjKDUwMDAsNDUwMCw1NTAwLDc1MDAsMzIwMCkNCnNhbGFyaW9fc2luX2lnZ3MgPC1zYXBwbHkocGxhbmlsbGEsIHF1aXRhcklnZ3MpDQpzYWxhcmlvX3Npbl9pZ2dzDQojT1VUUFVUOiBbMV0gNDc1OC41MCA0MjgyLjY1IDUyMzQuMzUgNzEzNy43NSAzMDQ1LjQ0DQoNCnNhbGFyaW9fc2luX2lnZ3NbMV0NCiNPVVRQVVQ6IDQ3NTguNQ0KYGBgDQoNCiMjIyAqKnZhcHBseSoqDQoNClNlIGNhcmFjdGVyaXphIHBvciByZXRvcm5hciB1biB2ZWN0b3IgY29uIGxvbmdpdHVkIHF1ZSB0aWVuZSBjYWRhIHVuYSBkZSBsYXMgDQpsaXN0YXMgcGFzYWRhcyBjb21vIHBhcmFtZXRyb3MgYSBsYSBmdW5jacOzbi4NCg0KDQpTeW50YXg6DQotIFggZXMgdW5hIGxpc3RhLCB2ZWN0b3IgbyBkYXRhIGZyYW1lDQotIEZVTiBlcyBsYSBmdW5jacOzbiBxdWUgYXBsaWNhcmEgYSBjYWRhIGVsZW1lbnRvLg0KLSBGVU4uVkFMVUUgdGlwbyBkZSBkYXRvIGEgcmV0b3JuYXIuDQoNCmBgYHtyfQ0KdmFwcGx5KFgsIEZVTiwgRlVOLlZBTFVFKQ0KYGBgDQoNCiMjIyMgVXNvIGRlIHZhcHBseQ0KDQpUb21hbmRvIHVuIHZlY3RvciBkZSB2ZW50YXMsIGNhZGEgZMOtYSBzZSB0aWVuZW4gdmVudGFzIHBvciBkaWZlcmVudGVzIG1vbnRvcywgDQpzaSBxdWlzaWVyYW1vcyBzYWJlciBlbCBtb250byBkZSBsYSB2ZW50YSBtw6F4aW1hIGxvIGhhY2Vtb3MgcG9yIG1lZGlvIGRlIHZhcHBseSwNCnVzYW5kbyBsYSBmdW5jaW9uIG1heCBub3MgYnVzY2EgZWwgdmFsb3IgbcOheGltbyBlbiBsYSBsaXN0YSBxdWUgcGFzYW1vcyBjb21vIHBhcmFtZXRyby4NCg0KYGBge3J9DQoNCnZlbnRhcyA8LSBsaXN0KGx1bmVzID0gYygxMDAsIDQ1LCA1NSksIG1hcnRlcyA9IGMoNTAwLDgwLDIwMCwzNiksIG1pZXJjb2xlcyA9IGMoMTAwLDQwKSkNCg0Kc2FwcGx5KHZlbnRhcywgbWF4KQ0KdmVudGFzX21heCA8LXZhcHBseSh2ZW50YXMsIG1heCxudW1lcmljKDEpKQ0KDQp2ZW50YXNfbWF4DQojT1VUUFVUOiBsdW5lcyAgICBtYXJ0ZXMgICAgbWllcmNvbGVzIA0KIyAgICAgICAgIDEwMCAgICAgICA1MDAgICAgICAgMTAwIA0KDQp2ZW50YXNfbWF4WzFdDQojT1VUUFVUOiBsdW5lcw0KIyAgICAgICAgIDEwMA0KYGBgDQoNClBhcmEgc2FiZXIgbGEgY2FudGlkYWQgZGUgdmVudGFzIHF1ZSBzZSB0dXZpZXJvbiBlbiB1biBkw61hLCBzZSBwdWVkZSByZWFsaXphciANCnBhc2FuZG8gZWwgdmVjdG9yIGRlIHZlbnRhcyB5IGhhY2llbmRvIHVzbyBkZSBsYSBmdW5jacOzbiBsZW5ndGggcGFyYSBjYWxjdWxhciBlbA0KbsO6bWVybyBkZSBlbGVtZW50b3MgZGUgbGEgbGlzdGEsIHF1ZSBlbiBlc3RlIGNhc28gZXF1aXZhbGVuIGFsIG7Dum1lcm8gZGUgdmVudGFzLg0KDQpgYGB7cn0NCmNhbnRpZGFkX3ZlbnRhcyA8LXZhcHBseSh2ZW50YXMsIGxlbmd0aCxudW1lcmljKDEpKQ0KY2FudGlkYWRfdmVudGFzDQojIE9VVFBVVDogbHVuZXMgICAgbWFydGVzICAgIG1pZXJjb2xlcyANCiMgICAgICAgICAgIDMgICAgICAgICA0ICAgICAgICAgMiANCmBgYA0K</div>
 
 
 
@@ -2070,7 +2221,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Tarea 1 - Funciones R.Rmd");
+  window.initializeSourceEmbed("Tarea 2 - Funciones R.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

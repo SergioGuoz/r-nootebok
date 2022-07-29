@@ -1,5 +1,5 @@
 ---
-title: "R Notebook - Tarea 1"
+title: "R Notebook - Tarea 2"
 output: html_notebook
 ---
 
@@ -183,4 +183,3 @@ cantidad_ventas
 # OUTPUT: lunes    martes    miercoles 
 #           3         4         2 
 ```
-
