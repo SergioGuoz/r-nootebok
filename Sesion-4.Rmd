@@ -1,0 +1,167 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+length(linkedin)
+head(linkedin,2)
+tail(linkedin,2)
+
+help("length")
+?length
+matrix()
+
+```
+
+Use function
+```{r}
+avg_li <- mean(x=linkedin, na.rm = TRUE)
+avg_li
+
+sum(linkedin)
+abs(linkedin)
+```
+Write your own function
+```{r}
+
+pow_two <-  function (arg){
+  arg**2
+}
+pow_two(2)
+sum_abs <- function(arg1,arg2){
+  abs(arg1)+abs(arg2)
+}
+sum_abs(-2,3)
+
+hello <- function(){
+  print("Hi there!")
+  return (TRUE)
+}
+hello()
+
+pow_two <- function(x,print_info=TRUE){
+  y <- x^2
+  if(print_info){
+    print(paste(x,"to the power equals",y))
+  }
+  
+  return (y)
+}
+
+pow_two(3)
+
+interpret <-  function(num_views){
+  if(num_views > 15){
+    print("You're popular")
+    return (num_views)
+  }else{
+    print("Try to be more visible")
+    return(0)
+  }
+}
+
+interpret(linkedin[2])
+
+interpret_all <- function(views,return_sum=TRUE){
+  count <- 0
+  for (item in views) {
+    count <- count +interpret(item)
+  }
+  
+  if(return_sum){
+    return (count)
+  }else{
+    return (NULL)
+  }
+}
+
+interpret_all(linkedin)
+```
+
+Install Package
+```{r}
+installed.packages("ggplot2")
+```
+
+```{r}
+library(ggplot2)
+mtcars
+
+qplot(mtcars$wt, mtcars$hp)
+```
+
+apply familylapply
+
+
+```{r}
+pionners <- c("GAUSS:1777","BAYES:1702","PASCAL:1623")
+
+split_math <- strsplit(pionners, split=':')
+
+split_math
+
+split_low <- lapply(split_math,tolower)
+split_low
+
+select_first <- function(x){
+  x[1]
+}
+
+names <- lapply(split_low, select_first)
+
+select_first <- function(x){
+  x[1]
+}
+names
+```
+
+lapply and anonymous functions
+```{r}
+split_low
+names <- lapply(split_low, function(x){x[1]})
+years <- lapply(split_low, function(x){x[2]})
+
+```
+
+Use lapply with additional arguments
+
+```{r}
+select_el <- function(x, index){
+  x[index]
+}
+
+select_el(split_low,1)
+
+names <- lapply(split_low,select_el, 1 )
+years <- lapply(split_low,select_el, 2 )
+```
+
+sapply
+```{r}
+names <- sapply(split_low,select_el, 1 )
+names
+
+extreme_avg <- function(x){
+  (min(x)+max(2))/2
+}
+vec1 <- c(3,8,7,6)
+vec2 <- c(8,8,7,2)
+vec3 <- c(10,1,11,6)
+
+temp <- list(vec1, vec2,vec3)
+sapply(temp,extreme_avg)
+
+```
+
+vapply 
+```{r}
+
+basics <- function(x){
+  c(min = min(x), mean=mean(x), max=max(x))
+}
+basics(temp[[1]])
+
+vapply(temp,basics,numeric(3))
+```
+
