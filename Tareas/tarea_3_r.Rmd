@@ -1,0 +1,96 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Leer un archivo csv
+Se realiza por medio de la funcion csv2 que tiene como parametros características
+del archivo. Tal como se indica a continuación.
+```{r}
+read.csv2(file,                # Ruta del archivo
+          header = TRUE,       # Indica si tiene encabezados de columnas
+          sep = ";",           # Separador de campos
+          quote = "\"",        # Para citar
+          dec = ",",           # Separador decimal
+          fill = TRUE,         # Indica si rellana o no las filas vacías
+          comment.char = "",   # Caracter de comentarios
+          encoding = ""        # Codificacion del archivo
+          )
+```
+
+** Función select()
+Esta función sirve para indicar que columnas necesitamos que sean retornadas,
+para ello dentro de la función select colocamos el nombre de las columnas
+que deseamos visualizar.
+```{r}
+#Seleccionamos las columnas year, shool y country, la data puede tener más columnas.
+mi_data <- data %>% select(year, school, country)
+```
+
+
+
+```{r}
+
+library(dplyr)
+
+dataset_results <-  read.csv2("primary_results.csv", header = TRUE, sep = ",", quote = "\"", dec = ".",
+          fill = TRUE, comment.char = "")
+
+```
+
+1. Votos del estado de Florida
+```{r}
+dataset_results %>%
+  filter(state=='Florida')
+```
+
+2. 
+2.1 Filtrar votos para los candidatos Hillary Clinton o Donald Trump
+
+```{r}
+dataset_results %>%
+  filter(candidate=='Hillary Clinton' | candidate=='Donald Trump')
+```
+
+2.2 Filtrar votos para el partido Demócrata y el condado Shelby
+
+```{r}
+dataset_results %>%
+  filter(party=='Democrat', county=='Shelby')
+```
+
+2.3 Filtrar votos para el estado de Alabama y que la cantidad de votos sea mayor a
+15000.
+
+```{r}
+dataset_results %>%
+  filter(state=='Alabama', votes>15000)
+```
+
+3.
+3.1. Filtrar votos para el estado de Texas y el condado Denton, seleccionando
+únicamente las columnas party, candidate, votes, luego ordene de forma
+descendente por la columna votes.
+
+```{r}
+dataset_results %>%
+  filter(state=='Texas', county=='Denton') %>%
+  select(party, candidate, votes) %>%
+  arrange(desc(votes))
+```
+
+
+
+4.
+Filtrar por el partido Republicano, que el candidato sea Ted Cruz en el estado de
+Alaska, luego agregue una columna que se llame vote_count que sea la división de
+votes por fraction_votes (votes/fraction_votes), finalmente ordene de forma
+descendente por vote_count.
+
+```{r}
+dataset_results %>%
+  filter(party=='Republican', candidate=='Ted Cruz', state=="Alaska") %>%
+  mutate(vote_count = votes/fraction_votes)
+  arrange(desc(vote_count))
+```
+
