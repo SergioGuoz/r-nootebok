@@ -1,0 +1,113 @@
+
+```{r}
+
+library(tidyverse)
+
+library(dplyr)
+
+questions <- read_csv('questions.csv')
+answers <- read_csv('answers.csv')
+tags <- read_csv('tags.csv')
+question_tags <- read_csv('question_tags.csv')
+
+```
+
+1. Left-joining questions and tags
+
+```{r}
+#1.1. Relacione questions y question_tags usando las columnas id y question_id
+
+resultado <-  questions %>%
+  left_join(question_tags, by = c("id"="question_id"))
+
+
+# 1.2. Agregue una relación más para la tabla tags.
+
+questions %>%
+  left_join(question_tags, by = c("id"="question_id")) %>%
+  left_join(tags, by = c("tag_id"="id"))
+
+#1.3 Utilice replace_na para cambiar los NA en la columna tag_name a "only-r".
+
+questions %>%
+  left_join(question_tags, by = c("id"="question_id")) %>%
+  left_join(tags, by = c("tag_id"="id")) %>%
+  replace_na(list(tag_name="only-r"))
+
+#1.4 Por último, almacene el resultado en la variable questions_with_tags
+
+questions_with_tags <- questions %>%
+  left_join(question_tags, by = c("id"="question_id")) %>%
+  left_join(tags, by = c("tag_id"="id")) %>%
+  replace_na(list(tag_name="only-r"))
+
+
+```
+2. Comparing scores across tags
+
+```{r}
+
+#2.1 Utilice questions_with_tags y aplique group_by para la variable tag_name.
+
+questions_with_tags %>%
+  group_by(tag_name) %>%
+  
+#2.2
+questions_with_tags %>%
+  group_by(tag_name) %>%
+  summarize(mean_score=mean(score)) 
+
+#2.3
+questions_with_tags %>%
+  group_by(tag_name) %>%
+  summarize(mean_score=mean(score)) %>%
+  arrange(desc(mean_score))
+
+```
+3. Finding gaps between questions and answers
+```{r}
+#3.1
+result_gap <- questions %>% 
+  inner_join(answers, by=c("id"="question_id"), suffix=c("_question","_answer"))
+
+#3.2
+result_gap <- questions %>% 
+  inner_join(answers, by=c("id"="question_id"), suffix=c("_question","_answer")) %>%
+  mutate(gap=creation_date_answer-creation_date_question)
+
+
+```
+4. Joining question and answer counts
+
+```{r}
+
+answer_counts <- answers  %>%
+  count(question_id) %>%
+  arrange(question_id)
+
+
+question_answer_counts <- questions %>%
+  left_join(answer_counts, by=c("id"="question_id")) %>%
+  replace_na(list(n=0))
+
+
+question_answer_counts
+
+```
+5. Joining questions, answers, and tags
+
+```{r}
+#5.1. Combine question_tags con question_answer_counts usando inner_join.
+
+question_tags %>%
+  inner_join(question_answer_counts, by=c("question_id"="id"))
+
+#5.2. Ahora, use otro inner_join para agregar la tabla tags.
+question_tags %>%
+  inner_join(question_answer_counts, by=c("question_id"="id")) %>%
+  inner_join(tags, by=c("tag_id"="id"))
+
+```
+
+
+

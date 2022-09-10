@@ -3,11 +3,12 @@
 ```{r}
 library(tidyverse)
 
+library(dplyr)
 
 sets <- read_csv('sets.csv')
 themes <- read_csv('themes.csv')
 parts <- read_csv('parts.csv')
-part_category <- read_csv('part_category.csv')
+part_categories <- read_csv('part_categories.csv')
 inventory_parts <- read_csv('inventory_parts.csv')
 inventories <- read_csv('inventories.csv')
 colors <- read_csv('colors.csv')
@@ -48,7 +49,7 @@ inventories
 
 sets %>%
 	inner_join(inventories, by="set_num") %>%
-	inner_join(inventory_parts, by=c("id","inventory_id")) %>%
+	inner_join(inventory_parts, by=c("id"="inventory_id")) %>%
 	inner_join(colors, by=c("color_id"="id"), suffix=c("_set","_color"))
 
 ```
@@ -87,7 +88,7 @@ star_destroyer <- inventory_parts_joines %>%
 
 
 millenium_fallcon %>%
-	left_join(star_destroyer, by = c("part_num","color_id"), suffix=C("_falcon","_star_destroyer"))
+	left_join(star_destroyer, by = c("part_num"="color_id"), suffix=C("_falcon","_star_destroyer"))
 
 ```
 
@@ -128,7 +129,40 @@ Right Join
 
 ```{r}
 parts %>%
-	count(part_cart_id) %>%
-	right_join(part_categories, by=c("part_cat_id","id"))
+	count(part_cat_id) %>%
+	right_join(part_categories, by=c("part_cat_id"="id"))
 
 ```
+
+
+```{r}
+parts %>%
+	count(part_cat_id) %>%
+	right_join(part_categories, by = c("part_cat_id"="id")) %>%
+  filter(is.na(n))
+
+parts %>%
+  count(part_cat_id) %>%
+  right_join(part_categories, by = c("part_cat_id" = "id")) %>%
+  replace_na(list(n = 0))
+```
+Joining themes to their children
+
+```{r}
+
+themes
+
+themes %>%
+  inner_join(themes, by=c("id"="parent_id"), suffix=c("_parent","_Child")) %>%
+  filter(name_parent=="Harry Potter")
+```
+
+
+```{r}
+themes
+
+themes %>%
+  inner_join(themes, by=c("id"="parent_id"), suffix=c("_parent","_child")) %>%
+  inner_join(themes, by=c("id_child" = "parent_id"), suffix=c("_parent","_grandchild"))
+```
+
